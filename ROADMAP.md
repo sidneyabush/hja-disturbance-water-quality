@@ -1,7 +1,5 @@
 # Shifts Over Time and Disturbance Roadmap
 
-GitHub: https://github.com/sidneyabush/hja-disturbance-water-quality
-
 Progress updates: [PROGRESS_UPDATES.md](PROGRESS_UPDATES.md)
 
 ## What This Is For
