@@ -9,7 +9,7 @@ These scripts were part of the broader storage-water-quality workflow:
 - combined master tables
 - storage-framework joins
 
-They are archived here because the disturbance paper currently uses a leaner workflow:
+They are archived here because the disturbance paper currently uses a smaller workflow:
 
 1. Build `HJA_CQ_master.csv`.
 2. Build annual disturbance chemistry summaries.
