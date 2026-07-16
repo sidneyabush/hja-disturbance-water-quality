@@ -1,9 +1,6 @@
 # Shifts Over Time and Disturbance
 
-Start here:
-
-- [Roadmap](ROADMAP.md)
-- [Progress updates](PROGRESS_UPDATES.md)
+Project planning notes are maintained separately.
 
 ## Main Idea
 
@@ -28,8 +25,6 @@ Outputs are written here:
 
 ## Files To Edit
 
-- [ROADMAP.md](ROADMAP.md): current plan, figure shortlist, and next steps.
-- [PROGRESS_UPDATES.md](PROGRESS_UPDATES.md): dated notes on what changed.
 - `01_data_prep/1a_build_chemistry_master.R`: compact chemistry master used by
   the disturbance workflow.
 - `02_disturbance_time_change/2b_synthesize_temporal_lag_results.R`: long-term
@@ -128,7 +123,7 @@ should join:
 
 ## Next Steps
 
-Current next steps are tracked in [Roadmap](ROADMAP.md).
+Current next steps are maintained separately.
 
 ## Notes
 
