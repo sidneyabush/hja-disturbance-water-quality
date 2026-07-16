@@ -20,7 +20,7 @@ story is strong enough for a separate paper.
 - Yearly chemistry summaries are available through water year 2024.
 - Preliminary Holiday Farm Fire summaries are available.
 - February 1996 flood/high-flow summaries from HF004 are available.
-- Candidate figures are written to
+- Prelim figures are written to
   `/Users/sidneybush/Library/CloudStorage/Box-Box/Sidney_Bush/HJA_Water_Quality/exploratory_plots/07_disturbance_time_change`.
 - The temporal-lag and 1996 flood figure set was regenerated on 2026-07-16 with
   `Rscript run_disturbance_workflow.R`.
@@ -29,7 +29,7 @@ story is strong enough for a separate paper.
 - Lookout Fire watershed data still need to be found or built.
 - Landslide data should only be included if the data are ready enough.
 
-## Candidate Figure Set
+## Prelim Figures
 
 - `temporal_lag_site_solute_post2020_heatmap.png`: best current screening
   figure for showing which sites and solutes changed most after 2020.
@@ -39,18 +39,6 @@ story is strong enough for a separate paper.
   trends from post-2020 departures.
 - `hf004_1996_flood_hydrograph.png`: event-context figure for the February 1996
   flood.
-
-## Milestones
-
-1. Compare chemistry in more-burned watersheds with less-burned or unburned
-   watersheds after the Holiday Farm Fire.
-2. Review which chemistry variables show the clearest post-fire changes.
-3. Use the February 1996 flood data to check chemistry before and after the
-   flood.
-4. Find or build a Lookout Fire watershed table.
-5. Decide whether landslides are ready enough to include.
-6. Decide by late July whether this work contributes to the AGU abstract or
-   stays separate from the storage-water quality paper for now.
 
 ## Current Next Steps
 

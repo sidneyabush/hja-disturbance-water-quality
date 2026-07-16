@@ -10,11 +10,11 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 - Confirmed this repo has the same basic progress/roadmap documentation pattern
   as the DSi ungaged-basin and spatial-data workflow repos.
 - Regenerated the temporal-lag chemistry tables, Holiday Farm Fire summaries,
-  HF004 flood/high-flow tables, and candidate figures with
+  HF004 flood/high-flow tables, and prelim figures with
   `Rscript run_disturbance_workflow.R`.
 - Spot-checked the post-2020 solute departure plot, site-solute heatmap, and
   February 1996 flood hydrograph.
-- Updated the roadmap with a concrete candidate figure set and current next
+- Updated the roadmap with a concrete prelim figure set and current next
   plot targets.
 
 ### Decisions
