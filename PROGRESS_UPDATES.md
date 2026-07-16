@@ -3,6 +3,37 @@
 Use this file for dated notes about work completed, decisions made, and what to
 pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 
+## 2026-07-16
+
+### Progress
+
+- Confirmed this repo has the same basic progress/roadmap documentation pattern
+  as the DSi ungaged-basin and spatial-data workflow repos.
+- Regenerated the temporal-lag chemistry tables, Holiday Farm Fire summaries,
+  HF004 flood/high-flow tables, and candidate figures with
+  `Rscript run_disturbance_workflow.R`.
+- Spot-checked the post-2020 solute departure plot, site-solute heatmap, and
+  February 1996 flood hydrograph.
+- Updated the roadmap with a concrete candidate figure set and current next
+  plot targets.
+
+### Decisions
+
+- Treat `temporal_lag_site_solute_post2020_heatmap.png` as the strongest current
+  screening figure for the disturbance paper.
+- Keep `temporal_lag_post2020_solute_departures.png` as an overview figure, but
+  describe it as a screening result rather than a causal fire effect.
+- Use the February 1996 hydrograph as event context; still need a chemistry
+  before/after flood plot.
+
+### Next
+
+- Build a Holiday Farm Fire comparison plot for more-burned versus less-burned
+  or unburned watersheds.
+- Build a February 1996 before/after chemistry plot from
+  `hf004_1996_flood_chemistry_lag_panel.csv`.
+- Find or build the Lookout Fire burned-area and severity table by watershed.
+
 ## 2026-07-15
 
 ### Progress
