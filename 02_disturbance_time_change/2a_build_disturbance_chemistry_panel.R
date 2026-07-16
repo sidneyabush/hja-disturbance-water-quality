@@ -1,5 +1,5 @@
 # =============================================================================
-# 7a: Temporal lag disturbance-response chemistry panel
+# 2a: Temporal lag disturbance-response chemistry panel
 # =============================================================================
 # Uses the full discrete chemistry record to build annual site-solute chemistry
 # summaries, baseline anomalies, trend screens, and disturbance-era summaries.
@@ -44,7 +44,7 @@ source(file.path(repo_dir, "00_helpers", "plot_prefs.R"))
 
 paths <- get_project_paths()
 out_dir <- paths$out_dir
-res_dir <- file.path(out_dir, "07_disturbance_time_change")
+res_dir <- file.path(out_dir, "02_disturbance_time_change")
 dir.create(res_dir, recursive = TRUE, showWarnings = FALSE)
 
 chem_file <- file.path(out_dir, "HJA_CQ_master.csv")
@@ -59,13 +59,13 @@ min_annual_samples <- 3L
 disturbance_events <- tibble::tribble(
   ~event_id, ~event_name, ~disturbance_type, ~calendar_year, ~first_full_water_year, ~analysis_role, ~notes,
   "holiday_farm_fire_2020", "Holiday Farm Fire", "wildfire", 2020L, 2021L,
-  "Candidate pre/post wildfire contrast",
+  "Pre/post wildfire contrast to review",
   "Use site-level burn severity or burned-area fractions before treating sites as affected.",
   "lookout_fire_2023", "Lookout Fire", "wildfire", 2023L, 2024L,
   "Emerging post-fire contrast",
   "Chemistry record currently provides early post-fire years only; treat as exploratory until more years accrue.",
   "landslide_inventory", "Mapped landslide disturbances", "landslide", NA_integer_, NA_integer_,
-  "Future exposure layer",
+  "Future disturbance table",
   "Attach dated landslide inventory or landslide-area fractions before formal modeling.",
   "large_flood_inventory", "Large flood events", "flood", NA_integer_, NA_integer_,
   "Future event layer",

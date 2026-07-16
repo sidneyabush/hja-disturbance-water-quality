@@ -1,9 +1,9 @@
 # =============================================================================
-# 7b: Synthesize temporal lag disturbance-response screening results
+# 2b: Synthesize temporal lag disturbance-response screening results
 # =============================================================================
 # Converts full-record chemistry trajectories, baseline anomalies, and trend
-# screens into manuscript-facing screening tables, figures, and a short analysis
-# brief. This is descriptive until disturbance exposure layers are filled.
+# screens into screening tables, figures, and a short analysis brief. This is
+# descriptive until disturbance data are joined to chemistry.
 # =============================================================================
 
 suppressPackageStartupMessages({
@@ -44,8 +44,8 @@ theme_file <- file.path(repo_dir, "00_helpers", "plot_theme_set.R")
 if (file.exists(theme_file)) source(theme_file)
 
 paths <- get_project_paths()
-base_res_dir <- file.path(paths$out_dir, "07_disturbance_time_change")
-base_fig_dir <- file.path(paths$fig_root, "07_disturbance_time_change")
+base_res_dir <- file.path(paths$out_dir, "02_disturbance_time_change")
+base_fig_dir <- file.path(paths$fig_root, "02_disturbance_time_change")
 synth_dir <- file.path(base_res_dir, "temporal_lag_synthesis")
 synth_fig_dir <- file.path(base_fig_dir, "temporal_lag_synthesis")
 dir.create(synth_dir, recursive = TRUE, showWarnings = FALSE)
@@ -62,7 +62,7 @@ theme_synthesis <- function(base_size = 11) {
 
 require_file <- function(path) {
   if (!file.exists(path)) {
-    stop("Missing required temporal lag input: ", path, "\nRun 7a_build_disturbance_chemistry_panel.R first.")
+    stop("Missing required temporal lag input: ", path, "\nRun 2a_build_disturbance_chemistry_panel.R first.")
   }
   path
 }
@@ -195,7 +195,7 @@ site_solute_post_window <- post_years %>%
   ) %>%
   add_solute_type(solute_col = "variable", three_way = TRUE) %>%
   mutate(
-    candidate_signal = case_when(
+    screening_signal = case_when(
       abs(mean_log10_anomaly) >= 0.30 ~ "large mean anomaly",
       abs(mean_log10_anomaly) >= 0.10 ~ "moderate mean anomaly",
       is.finite(mean_z_anomaly) & abs(mean_z_anomaly) >= 2 ~ "large standardized anomaly",
@@ -224,14 +224,12 @@ site_solute_post_all <- post_years %>%
   add_solute_type(solute_col = "variable", three_way = TRUE) %>%
   arrange(desc(abs(mean_log10_anomaly)), desc(max_abs_log10_anomaly))
 
-candidate_site_solute_signals <- site_solute_post_window %>%
-  filter(candidate_signal != "screening background") %>%
+site_solute_screening_signals <- site_solute_post_window %>%
+  filter(screening_signal != "screening background") %>%
   arrange(desc(abs(mean_log10_anomaly)), desc(max_abs_log10_anomaly))
 
-readr::write_csv(
-  candidate_site_solute_signals,
-  file.path(synth_dir, "temporal_lag_candidate_site_solute_signals.csv")
-)
+site_solute_screening_file <- file.path(synth_dir, "temporal_lag_site_solute_screening_signals.csv")
+readr::write_csv(site_solute_screening_signals, site_solute_screening_file)
 
 top_trends_for_memo <- trend_ranked %>%
   filter(is.finite(q)) %>%
@@ -244,8 +242,8 @@ top_era_for_memo <- post_era_signals %>%
   ungroup() %>%
   select(disturbance_era, variable, solute_type, n_sites, mean_log10_anomaly, percent_departure_from_baseline)
 
-top_site_for_memo <- candidate_site_solute_signals %>%
-  select(Stream_Name, variable, post_window, candidate_signal, n_post_years, mean_log10_anomaly, mean_percent_departure, peak_water_year) %>%
+top_site_for_memo <- site_solute_screening_signals %>%
+  select(Stream_Name, variable, post_window, screening_signal, n_post_years, mean_log10_anomaly, mean_percent_departure, peak_water_year) %>%
   slice_head(n = 15)
 
 memo_lines <- c(
@@ -255,7 +253,7 @@ memo_lines <- c(
   "",
   "## Current Defensible Claim",
   "",
-  "The full chemistry record supports a temporal-lag screening analysis: annual site-solute chemistry can be expressed as departures from the WY1997-2020 storage-paper baseline, then ranked by long-term trend strength and post-2020 anomaly magnitude. These are candidate signals, not causal disturbance effects, until wildfire, landslide, and flood exposure data are added.",
+  "The full chemistry record supports a temporal-lag screening analysis: annual site-solute chemistry can be expressed as departures from the WY1997-2020 storage-paper baseline, then ranked by long-term trend strength and post-2020 anomaly magnitude. These are screening signals, not causal disturbance effects, until wildfire, landslide, and flood data are joined to chemistry.",
   "",
   "## Strongest Long-Term Site-Solute Trends",
   "",
@@ -265,15 +263,15 @@ memo_lines <- c(
   "",
   format_markdown_table(top_era_for_memo, digits = 2),
   "",
-  "## Candidate Site-Solute Temporal Lag Signals",
+  "## Site-Solute Signals To Review",
   "",
   format_markdown_table(top_site_for_memo, digits = 2),
   "",
   "## Immediate Analysis Moves",
   "",
-  "1. Fill watershed-level exposure for the 2020 Holiday Farm Fire and 2023 Lookout Fire.",
-  "2. Add dated landslide and flood-event exposure indicators.",
-  "3. Recast the candidate site-solute signals as event-study panels once exposure classes exist.",
+  "1. Fill watershed-level burned-area and burn-severity summaries for the 2020 Holiday Farm Fire and 2023 Lookout Fire.",
+  "2. Add dated landslide and flood-event summaries.",
+  "3. Recast the site-solute screening signals as event-study panels once disturbance data exist.",
   "4. Add updated post-2020 storage metrics or simpler hydrologic proxies before claiming storage change.",
   "5. Keep this temporal lag manuscript analytically separate from the WY1997-2020 storage-architecture paper."
 )
@@ -393,9 +391,9 @@ manifest <- tibble::tribble(
   "temporal_lag_post2020_era_signals.csv", "table",
   file.path(synth_dir, "temporal_lag_post2020_era_signals.csv"),
   "Post-2020 era-level solute departures",
-  "temporal_lag_candidate_site_solute_signals.csv", "table",
-  file.path(synth_dir, "temporal_lag_candidate_site_solute_signals.csv"),
-  "Candidate site-solute lag signals",
+  "temporal_lag_site_solute_screening_signals.csv", "table",
+  file.path(synth_dir, "temporal_lag_site_solute_screening_signals.csv"),
+  "Site-solute screening signals",
   "temporal_lag_post2020_solute_departures.png", "figure",
   file.path(synth_fig_dir, "temporal_lag_post2020_solute_departures.png"),
   "Post-2020 solute departure ranking",

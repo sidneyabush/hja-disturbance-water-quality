@@ -1,5 +1,5 @@
 # =============================================================================
-# 7d: Build flood and high-flow drivers from HF004 discharge
+# 2d: Build flood and high-flow drivers from HF004 discharge
 # =============================================================================
 # Creates compact, analysis-ready hydrologic disturbance drivers for the
 # temporal-lag manuscript. The primary event isolated here is the February 1996
@@ -63,8 +63,8 @@ theme_file <- file.path(repo_dir, "00_helpers", "plot_theme_set.R")
 if (file.exists(theme_file)) source(theme_file)
 
 paths <- get_project_paths()
-res_dir <- file.path(paths$out_dir, "07_disturbance_time_change", "flood_high_flow_drivers")
-fig_dir <- file.path(paths$fig_root, "07_disturbance_time_change", "flood_high_flow_drivers")
+res_dir <- file.path(paths$out_dir, "02_disturbance_time_change", "flood_high_flow_drivers")
+fig_dir <- file.path(paths$fig_root, "02_disturbance_time_change", "flood_high_flow_drivers")
 dir.create(res_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -90,7 +90,7 @@ catchment_file <- file.path(
 
 annual_chem_anomaly_file <- file.path(
   paths$out_dir,
-  "07_disturbance_time_change",
+  "02_disturbance_time_change",
   "annual_chemistry_baseline_anomalies.csv"
 )
 
@@ -266,7 +266,7 @@ flood_1996_summary <- flood_1996_event_window %>%
     source_dataset = "HF004",
     source_file = hf004_file,
     source_note = paste(
-      "Daily discharge-derived February 1996 flood exposure metric.",
+      "Daily discharge-derived February 1996 flood streamflow metric.",
       "Use as a hydrologic-event driver, not a mapped geomorphic disturbance layer."
     )
   ) %>%

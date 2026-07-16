@@ -1,5 +1,5 @@
 # =============================================================================
-# Run temporal lag disturbance-response scaffold
+# Run temporal lag disturbance-response analysis
 # =============================================================================
 
 get_script_dir <- function() {
@@ -16,10 +16,11 @@ get_script_dir <- function() {
 repo_dir <- get_script_dir()
 rscript <- file.path(R.home("bin"), "Rscript")
 scripts <- c(
-  file.path(repo_dir, "07_disturbance_time_change", "7a_build_disturbance_chemistry_panel.R"),
-  file.path(repo_dir, "07_disturbance_time_change", "7b_synthesize_temporal_lag_results.R"),
-  file.path(repo_dir, "07_disturbance_time_change", "7c_compile_disturbance_driver_sources.R"),
-  file.path(repo_dir, "07_disturbance_time_change", "7d_build_flood_high_flow_drivers.R")
+  file.path(repo_dir, "02_disturbance_time_change", "2a_build_disturbance_chemistry_panel.R"),
+  file.path(repo_dir, "02_disturbance_time_change", "2b_synthesize_temporal_lag_results.R"),
+  file.path(repo_dir, "02_disturbance_time_change", "2c_compile_disturbance_driver_sources.R"),
+  file.path(repo_dir, "02_disturbance_time_change", "2d_build_flood_high_flow_drivers.R"),
+  file.path(repo_dir, "02_disturbance_time_change", "2e_make_disturbance_paper_figures.R")
 )
 
 missing_scripts <- scripts[!file.exists(scripts)]
@@ -27,12 +28,12 @@ if (length(missing_scripts) > 0) {
   stop("Missing disturbance workflow script(s): ", paste(missing_scripts, collapse = ", "))
 }
 
-message("Running temporal lag disturbance-response scaffold from: ", repo_dir)
+message("Running temporal lag disturbance-response analysis from: ", repo_dir)
 for (script in scripts) {
   message("\n=== ", basename(script), " ===")
   status <- system2(rscript, args = normalizePath(script))
   if (!identical(status, 0L)) {
-    stop("Temporal lag disturbance-response scaffold failed at: ", basename(script))
+    stop("Temporal lag disturbance-response analysis failed at: ", basename(script))
   }
 }
-message("Temporal lag disturbance-response scaffold complete.")
+message("Temporal lag disturbance-response analysis complete.")

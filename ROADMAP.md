@@ -16,16 +16,19 @@ story is strong enough for a separate paper.
 ## What Exists Now
 
 - The main analysis script is `run_disturbance_workflow.R`.
-- Outputs are written to `outputs/07_disturbance_time_change`.
+- Outputs are written to `outputs/02_disturbance_time_change`.
 - Yearly chemistry summaries are available through water year 2024.
 - Preliminary Holiday Farm Fire summaries are available.
 - February 1996 flood/high-flow summaries from HF004 are available.
 - Prelim figures are written to
-  `/Users/sidneybush/Library/CloudStorage/Box-Box/Sidney_Bush/HJA_Water_Quality/exploratory_plots/07_disturbance_time_change`.
+  `/Users/sidneybush/Library/CloudStorage/Box-Box/Sidney_Bush/HJA_Water_Quality/exploratory_plots/02_disturbance_time_change`.
+- First paper comparison figures are written to
+  `/Users/sidneybush/Library/CloudStorage/Box-Box/Sidney_Bush/HJA_Water_Quality/exploratory_plots/02_disturbance_time_change/prelim_paper_figures`.
 - The temporal-lag and 1996 flood figure set was regenerated on 2026-07-16 with
   `Rscript run_disturbance_workflow.R`.
-- Current strongest screening signal: post-2020 nitrate is high across the
-  recent record, especially at `GSWS09` and `GSWS02`.
+- Current strongest disturbance signal: post-2020 nitrate is high in burned
+  Holiday Farm Fire watersheds, especially `GSWS09`, with secondary support
+  from sulfate.
 - Lookout Fire watershed data still need to be found or built.
 - Landslide data should only be included if the data are ready enough.
 
@@ -39,25 +42,32 @@ story is strong enough for a separate paper.
   trends from post-2020 departures.
 - `hf004_1996_flood_hydrograph.png`: event-context figure for the February 1996
   flood.
+- `holiday_farm_fire_burned_area_chemistry_comparison.png`: strongest current
+  disturbance-paper figure; compares WY2021-2023 chemistry departures with
+  Holiday Farm Fire burned area and basal-area mortality by watershed.
+- `february_1996_flood_before_after_chemistry.png`: first before/after chemistry
+  panel for the February 1996 flood window.
 
 ## Current Next Steps
 
-1. Build a Holiday Farm Fire comparison plot using burned versus less-burned or
-   unburned watersheds.
-2. Use `hf004_1996_flood_chemistry_lag_panel.csv` to make a before/after flood
-   chemistry plot.
+1. Review the Holiday Farm Fire burned-area chemistry figure as the first likely
+   disturbance-paper result.
+2. Decide whether the February 1996 flood chemistry panel belongs in the main
+   paper or supplement.
 3. Find or build the Lookout Fire burned-area and severity table by watershed.
-4. Keep current post-2020 figures framed as preliminary checks until disturbance
-   tables are fully joined to chemistry.
+4. Check whether WY2024 chemistry can be separated cleanly from lingering
+   Holiday Farm Fire effects.
 5. Keep dated notes in [Progress updates](PROGRESS_UPDATES.md).
 
 ## Useful Files
 
 - `run_disturbance_workflow.R`: main analysis script.
-- `07_disturbance_time_change/7b_synthesize_temporal_lag_results.R`: temporal
+- `02_disturbance_time_change/2b_synthesize_temporal_lag_results.R`: temporal
   chemistry-change synthesis and figures.
-- `07_disturbance_time_change/7c_compile_disturbance_driver_sources.R`:
-  Holiday Farm Fire watershed summaries.
-- `07_disturbance_time_change/7d_build_flood_high_flow_drivers.R`: HF004 flood
+- `02_disturbance_time_change/2c_compile_disturbance_driver_sources.R`:
+  Holiday Farm Fire burned-area summaries.
+- `02_disturbance_time_change/2d_build_flood_high_flow_drivers.R`: HF004 flood
   and high-flow tables.
+- `02_disturbance_time_change/2e_make_disturbance_paper_figures.R`: Holiday Farm
+  Fire and February 1996 flood chemistry comparison figures.
 - `PROGRESS_UPDATES.md`: dated decisions and next actions.

@@ -25,7 +25,21 @@ Rscript run_disturbance_workflow.R
 
 This uses the full chemistry record and writes outputs here:
 
-`outputs/07_disturbance_time_change`
+`outputs/02_disturbance_time_change`
+
+## Files To Edit
+
+- [ROADMAP.md](ROADMAP.md): current plan, figure shortlist, and next steps.
+- [PROGRESS_UPDATES.md](PROGRESS_UPDATES.md): dated notes on what changed.
+- `02_disturbance_time_change/2b_synthesize_temporal_lag_results.R`: long-term
+  chemistry-change summaries and screening figures.
+- `02_disturbance_time_change/2c_compile_disturbance_driver_sources.R`: Holiday
+  Farm Fire burned-area summaries.
+- `02_disturbance_time_change/2e_make_disturbance_paper_figures.R`: Holiday
+  Farm Fire and February 1996 flood comparison figures.
+
+Generated tables and figures in Box should be recreated by running the scripts,
+not edited by hand.
 
 ## What We Have Now
 
@@ -56,7 +70,11 @@ Preliminary Holiday Farm Fire workbook:
 
 Data-check outputs:
 
-`/Users/sidneybush/Library/CloudStorage/Box-Box/Sidney_Bush/HJA_Water_Quality/outputs/07_disturbance_time_change/disturbance_driver_audit`
+`/Users/sidneybush/Library/CloudStorage/Box-Box/Sidney_Bush/HJA_Water_Quality/outputs/02_disturbance_time_change/disturbance_driver_audit`
+
+Most useful Holiday Farm Fire site table:
+
+`holiday_farm_fire_2020_burned_area_by_wq_site.csv`
 
 Flood outputs:
 

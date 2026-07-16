@@ -1,5 +1,5 @@
 # =============================================================================
-# 7c: Compile disturbance driver source tables
+# 2c: Compile disturbance driver source tables
 # =============================================================================
 # Builds auditable disturbance-driver input tables from available local sources.
 # Current source coverage:
@@ -45,7 +45,7 @@ source(file.path(repo_dir, "00_helpers", "plot_prefs.R"))
 
 paths <- get_project_paths()
 raw_driver_dir <- file.path(paths$raw_dir, "disturbance_drivers")
-res_dir <- file.path(paths$out_dir, "07_disturbance_time_change", "disturbance_driver_audit")
+res_dir <- file.path(paths$out_dir, "02_disturbance_time_change", "disturbance_driver_audit")
 dir.create(res_dir, recursive = TRUE, showWarnings = FALSE)
 
 catchment_file <- file.path(
@@ -239,15 +239,15 @@ hff_direct <- catchment %>%
       ),
       ~ replace_na(.x, 0)
     ),
-    exposure_class = case_when(
+    burn_class = case_when(
       mortality_50plus_fraction >= 0.10 ~ "high",
       mortality_25plus_fraction >= 0.10 ~ "moderate",
       mortality_gt0_fraction > 0 ~ "low",
       TRUE ~ "none"
     ),
-    affected_fraction = mapped_fire_overlap_fraction,
+    burned_area_fraction = mapped_fire_overlap_fraction,
     severity_index = mean_ba_mortality_midpoint,
-    exposure_notes = case_when(
+    burn_notes = case_when(
       hff_source_row_available ~ "Joined directly from preliminary HFF basal-area-mortality workbook.",
       TRUE ~ "No direct HFF workbook row for this WQ site; treated as zero mapped overlap for screening only."
     ),
@@ -255,25 +255,23 @@ hff_direct <- catchment %>%
     source_sheet = replace_na(source_sheet, "HFF2020 (2)"),
     source_note = replace_na(
       source_note,
-      "No direct site row in preliminary workbook; zero exposure assumption should be checked against final perimeter overlay."
+      "No direct site row in preliminary workbook; zero mapped-overlap assumption should be checked against final perimeter overlay."
     )
   ) %>%
   arrange(Stream_Name)
 
-readr::write_csv(
-  hff_direct,
-  file.path(res_dir, "holiday_farm_fire_2020_exposure_by_wq_site.csv")
-)
+hff_direct_file <- file.path(res_dir, "holiday_farm_fire_2020_burned_area_by_wq_site.csv")
+readr::write_csv(hff_direct, hff_direct_file)
 
 source_inventory <- tibble::tribble(
   ~source_id, ~source_type, ~path, ~status, ~notes,
   "storage_paper_catchment_char", "catchment_characteristics", catchment_file, "copied",
   "Finalized storage-paper catchment characteristics copied into WQ Box data/storage_paper_framework.",
-  "holiday_farm_fire_2020_prelim_ben", "wildfire_exposure_workbook", hff_workbook, "available",
+  "holiday_farm_fire_2020_prelim_ben", "wildfire_burned_area_workbook", hff_workbook, "available",
   "Preliminary HJA Holiday Farm Fire basal-area-mortality classes by watershed/subwatershed.",
-  "lookout_fire_2023", "wildfire_exposure", file.path(raw_driver_dir, "lookout_fire_2023"), "needed",
+  "lookout_fire_2023", "wildfire_burned_area", file.path(raw_driver_dir, "lookout_fire_2023"), "needed",
   "Need perimeter/burn-severity overlay or official watershed statistics.",
-  "flood_event_drivers", "hydrologic_event_drivers", file.path(paths$out_dir, "07_disturbance_time_change", "flood_high_flow_drivers"), "built_by_7d",
+  "flood_event_drivers", "hydrologic_event_drivers", file.path(paths$out_dir, "02_disturbance_time_change", "flood_high_flow_drivers"), "built_by_2d",
   "Annual/site peak-flow and high-flow threshold metrics built from HF004; includes a February 1996 flood event summary."
 )
 
