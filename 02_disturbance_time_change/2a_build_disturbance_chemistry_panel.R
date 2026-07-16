@@ -49,7 +49,7 @@ dir.create(res_dir, recursive = TRUE, showWarnings = FALSE)
 
 chem_file <- file.path(out_dir, "HJA_CQ_master.csv")
 if (!file.exists(chem_file)) {
-  stop("Missing chemistry master file: ", chem_file, "\nRun 01_data_prep/1_MASTER_DATA_PREP.R first.")
+  stop("Missing chemistry master file: ", chem_file, "\nRun 01_data_prep/1a_build_chemistry_master.R first.")
 }
 
 baseline_start_wy <- 1997L

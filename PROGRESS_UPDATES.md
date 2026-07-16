@@ -22,6 +22,9 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
   `february_1996_flood_before_after_chemistry.png`.
 - Renamed the disturbance workflow from the old step-07 path to
   `02_disturbance_time_change` to match this repo's workflow order.
+- Reduced active Step 01 to `1a_build_chemistry_master.R` and archived the
+  hydroseason, rolling C-Q, cluster, synchrony, master-table, and storage
+  framework prep scripts.
 - Renamed the Holiday Farm Fire site table to use burned-area language.
 - Replaced the site-solute table name with
   `temporal_lag_site_solute_screening_signals.csv`.
@@ -43,6 +46,8 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 - Use burned area and basal-area mortality language for the Holiday Farm Fire
   comparison.
 - Treat nitrate and sulfate as the clearest current post-fire chemistry signals.
+- Treat `HJA_CQ_master.csv` as the only Step-01 product required for the active
+  disturbance workflow.
 
 ### Next
 

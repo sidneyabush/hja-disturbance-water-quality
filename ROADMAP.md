@@ -16,6 +16,7 @@ story is strong enough for a separate paper.
 ## What Exists Now
 
 - The main analysis script is `run_disturbance_workflow.R`.
+- Active Step 01 has one script: `01_data_prep/1a_build_chemistry_master.R`.
 - Outputs are written to `outputs/02_disturbance_time_change`.
 - Yearly chemistry summaries are available through water year 2024.
 - Preliminary Holiday Farm Fire summaries are available.
@@ -31,6 +32,9 @@ story is strong enough for a separate paper.
   from sulfate.
 - Lookout Fire watershed data still need to be found or built.
 - Landslide data should only be included if the data are ready enough.
+- The old hydroseason, rolling C-Q, cluster, synchrony, and storage-framework
+  prep scripts are archived because they are not needed for this disturbance
+  workflow.
 
 ## Prelim Figures
 
@@ -62,6 +66,8 @@ story is strong enough for a separate paper.
 ## Useful Files
 
 - `run_disturbance_workflow.R`: main analysis script.
+- `01_data_prep/1a_build_chemistry_master.R`: compact discrete chemistry master
+  builder.
 - `02_disturbance_time_change/2b_synthesize_temporal_lag_results.R`: temporal
   chemistry-change synthesis and figures.
 - `02_disturbance_time_change/2c_compile_disturbance_driver_sources.R`:

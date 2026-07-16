@@ -23,7 +23,8 @@ From this project folder:
 Rscript run_disturbance_workflow.R
 ```
 
-This uses the full chemistry record and writes outputs here:
+This rebuilds the compact chemistry master, then runs the disturbance workflow.
+Outputs are written here:
 
 `outputs/02_disturbance_time_change`
 
@@ -31,6 +32,8 @@ This uses the full chemistry record and writes outputs here:
 
 - [ROADMAP.md](ROADMAP.md): current plan, figure shortlist, and next steps.
 - [PROGRESS_UPDATES.md](PROGRESS_UPDATES.md): dated notes on what changed.
+- `01_data_prep/1a_build_chemistry_master.R`: compact chemistry master used by
+  the disturbance workflow.
 - `02_disturbance_time_change/2b_synthesize_temporal_lag_results.R`: long-term
   chemistry-change summaries and screening figures.
 - `02_disturbance_time_change/2c_compile_disturbance_driver_sources.R`: Holiday
@@ -40,6 +43,10 @@ This uses the full chemistry record and writes outputs here:
 
 Generated tables and figures in Box should be recreated by running the scripts,
 not edited by hand.
+
+Archived Step-01 scripts live in `_archive/storage_water_quality_prep/`. Those
+hydroseason, rolling C-Q, cluster, synchrony, and storage-framework prep steps
+are not active disturbance-paper analyses.
 
 ## What We Have Now
 
@@ -129,6 +136,9 @@ Current next steps are tracked in [Roadmap](ROADMAP.md).
 
 - Keep water years 2021-2024 separate from the main storage paper unless storage
   values are updated beyond water year 2020.
+- Keep clusters, synchrony, hydroseasons, and storage-framework ordinations out
+  of this repo's active workflow unless the disturbance paper explicitly needs
+  them later.
 - Describe the current results as preliminary checks until the disturbance data are
   fully joined.
 - Do not make strong claims about fire, flood, or landslide effects until

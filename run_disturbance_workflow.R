@@ -1,5 +1,5 @@
 # =============================================================================
-# Run temporal lag disturbance-response analysis
+# Run disturbance-water-quality workflow
 # =============================================================================
 
 get_script_dir <- function() {
@@ -16,6 +16,7 @@ get_script_dir <- function() {
 repo_dir <- get_script_dir()
 rscript <- file.path(R.home("bin"), "Rscript")
 scripts <- c(
+  file.path(repo_dir, "01_data_prep", "1a_build_chemistry_master.R"),
   file.path(repo_dir, "02_disturbance_time_change", "2a_build_disturbance_chemistry_panel.R"),
   file.path(repo_dir, "02_disturbance_time_change", "2b_synthesize_temporal_lag_results.R"),
   file.path(repo_dir, "02_disturbance_time_change", "2c_compile_disturbance_driver_sources.R"),
@@ -28,12 +29,12 @@ if (length(missing_scripts) > 0) {
   stop("Missing disturbance workflow script(s): ", paste(missing_scripts, collapse = ", "))
 }
 
-message("Running temporal lag disturbance-response analysis from: ", repo_dir)
+message("Running disturbance-water-quality workflow from: ", repo_dir)
 for (script in scripts) {
   message("\n=== ", basename(script), " ===")
   status <- system2(rscript, args = normalizePath(script))
   if (!identical(status, 0L)) {
-    stop("Temporal lag disturbance-response analysis failed at: ", basename(script))
+    stop("Disturbance-water-quality workflow failed at: ", basename(script))
   }
 }
-message("Temporal lag disturbance-response analysis complete.")
+message("Disturbance-water-quality workflow complete.")
