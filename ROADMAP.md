@@ -15,7 +15,7 @@ story is strong enough for a separate paper.
 
 ## What Exists Now
 
-- The active workflow is `run_disturbance_workflow.R`.
+- The main analysis script is `run_disturbance_workflow.R`.
 - Outputs are written to `outputs/07_disturbance_time_change`.
 - Yearly chemistry summaries are available through water year 2024.
 - Preliminary Holiday Farm Fire summaries are available.
@@ -47,13 +47,13 @@ story is strong enough for a separate paper.
 2. Use `hf004_1996_flood_chemistry_lag_panel.csv` to make a before/after flood
    chemistry plot.
 3. Find or build the Lookout Fire burned-area and severity table by watershed.
-4. Keep current post-2020 figures framed as early checks until disturbance
+4. Keep current post-2020 figures framed as preliminary checks until disturbance
    tables are fully joined to chemistry.
 5. Keep dated notes in [Progress updates](PROGRESS_UPDATES.md).
 
 ## Useful Files
 
-- `run_disturbance_workflow.R`: active workflow entry point.
+- `run_disturbance_workflow.R`: main analysis script.
 - `07_disturbance_time_change/7b_synthesize_temporal_lag_results.R`: temporal
   chemistry-change synthesis and figures.
 - `07_disturbance_time_change/7c_compile_disturbance_driver_sources.R`:

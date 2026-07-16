@@ -7,8 +7,8 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 
 ### Progress
 
-- Confirmed this repo has the same basic progress/roadmap documentation pattern
-  as the DSi ungaged-basin and spatial-data workflow repos.
+- Confirmed this project has progress notes and a roadmap like the DSi
+  ungaged-basin and spatial-data projects.
 - Regenerated the temporal-lag chemistry tables, Holiday Farm Fire summaries,
   HF004 flood/high-flow tables, and prelim figures with
   `Rscript run_disturbance_workflow.R`.
@@ -38,26 +38,26 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 
 ### Progress
 
-- Updated the disturbance repo docs so they use the split-repo filenames.
-- Kept the wording focused on the disturbance paper, not the old combined HJA
-  water-quality repo.
+- Updated the disturbance notes so they use the split-project filenames.
+- Kept the wording focused on the disturbance paper, not the older combined HJA
+  water-quality project.
 
 ### Decisions
 
-- Keep this repo focused on chemistry changes through time and disturbance
+- Keep this project focused on chemistry changes through time and disturbance
   response.
-- Keep the storage-water quality paper in the separate storage repo.
+- Keep the storage-water quality paper in the separate storage project.
 
 ## 2026-07-14
 
 ### Progress
 
-- Built a separate disturbance/time-change workflow under
+- Built a separate disturbance/time-change analysis under
   `07_disturbance_time_change`.
 - Added preliminary Holiday Farm Fire watershed summaries.
 - Built HF004-based flood/high-flow tables and identified the February 1996
   flood as a named event.
-- Kept Holiday Farm Fire and flood results framed as early checks, not final
+- Kept Holiday Farm Fire and flood results framed as preliminary checks, not final
   manuscript results.
 
 ### Decisions

@@ -17,7 +17,7 @@ through time.
 
 ## What To Run
 
-From the repo root:
+From this project folder:
 
 ```r
 Rscript run_disturbance_workflow.R
@@ -111,7 +111,7 @@ Current next steps are tracked in [Roadmap](ROADMAP.md).
 
 - Keep water years 2021-2024 separate from the main storage paper unless storage
   values are updated beyond water year 2020.
-- Describe the current results as early checks until the disturbance data are
+- Describe the current results as preliminary checks until the disturbance data are
   fully joined.
 - Do not make strong claims about fire, flood, or landslide effects until
   watersheds that were affected more and less are compared directly.
