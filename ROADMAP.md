@@ -18,6 +18,8 @@ story is strong enough for a separate paper.
 - The main analysis script is `run_disturbance_workflow.R`.
 - Active Step 01 has one script: `01_data_prep/1a_build_chemistry_master.R`.
 - Outputs are written to `outputs/02_disturbance_time_change`.
+- `HJA_CQ_master.csv` has been rebuilt with the full local chemistry record
+  through water year 2024.
 - Yearly chemistry summaries are available through water year 2024.
 - Preliminary Holiday Farm Fire summaries are available.
 - February 1996 flood/high-flow summaries from HF004 are available.
@@ -61,7 +63,8 @@ story is strong enough for a separate paper.
 3. Find or build the Lookout Fire burned-area and severity table by watershed.
 4. Check whether WY2024 chemistry can be separated cleanly from lingering
    Holiday Farm Fire effects.
-5. Keep dated notes in [Progress updates](PROGRESS_UPDATES.md).
+5. Decide whether landslide data are complete enough to include.
+6. Keep dated notes in [Progress updates](PROGRESS_UPDATES.md).
 
 ## Useful Files
 

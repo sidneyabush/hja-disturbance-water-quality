@@ -1,6 +1,7 @@
-# Archived Storage-Water-Quality Prep
+# Archived Non-Disturbance Prep
 
-These scripts were part of the broader storage-water-quality workflow:
+These archived scripts build chemistry summaries and comparison products that
+are not active disturbance-paper analyses:
 
 - hydrologic seasons
 - rolling C-Q windows

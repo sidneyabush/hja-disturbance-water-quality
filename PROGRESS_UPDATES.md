@@ -7,55 +7,28 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 
 ### Progress
 
-- Confirmed this project has progress notes and a roadmap like the DSi
-  ungaged-basin and spatial-data projects.
-- Regenerated the temporal-lag chemistry tables, Holiday Farm Fire summaries,
-  HF004 flood/high-flow tables, and prelim figures with
-  `Rscript run_disturbance_workflow.R`.
-- Spot-checked the post-2020 solute departure plot, site-solute heatmap, and
-  February 1996 flood hydrograph.
-- Updated the roadmap with a concrete prelim figure set and current next
-  plot targets.
-- Added `2e_make_disturbance_paper_figures.R` to make first paper comparison
-  plots.
-- Generated `holiday_farm_fire_burned_area_chemistry_comparison.png` and
-  `february_1996_flood_before_after_chemistry.png`.
-- Renamed the disturbance workflow from the old step-07 path to
-  `02_disturbance_time_change` to match this repo's workflow order.
-- Reduced active Step 01 to `1a_build_chemistry_master.R` and archived the
-  hydroseason, rolling C-Q, cluster, synchrony, master-table, and storage
-  framework prep scripts.
-- Renamed the Holiday Farm Fire site table to use burned-area language.
-- Replaced the site-solute table name with
-  `temporal_lag_site_solute_screening_signals.csv`.
-- Removed old generated files with outdated names from Box.
-- Replaced older jargon in active disturbance scripts where plain wording was
-  clearer.
-- Reduced routine startup messages from shared helper files.
+- Updated the project notes, workflow numbering, and active disturbance workflow
+  so the paper is easier to pick back up.
+- Rebuilt the chemistry input through water year 2024 and regenerated the
+  current fire and flood screening outputs.
+- Archived prep steps that are not needed for the current disturbance analysis.
 
 ### Decisions
 
-- Treat `temporal_lag_site_solute_post2020_heatmap.png` as the strongest current
-  screening figure for the disturbance paper.
-- Keep `temporal_lag_post2020_solute_departures.png` as an overview figure, but
-  describe it as a screening result rather than a causal fire effect.
-- Use the February 1996 hydrograph as event context; still need a chemistry
-  before/after flood plot.
-- Treat the Holiday Farm Fire burned-area chemistry comparison as the strongest
-  current disturbance-paper figure.
-- Use burned area and basal-area mortality language for the Holiday Farm Fire
-  comparison.
-- Treat nitrate and sulfate as the clearest current post-fire chemistry signals.
-- Treat `HJA_CQ_master.csv` as the only Step-01 product required for the active
-  disturbance workflow.
+- Treat the post-2020 site-solute heatmap and Holiday Farm Fire comparison as
+  the strongest current screening results.
+- Keep the February 1996 flood result as a candidate context or supplement
+  figure until the chemistry response is clearer.
+- Keep the active workflow focused on annual chemistry change and disturbance
+  drivers.
 
 ### Next
 
-- Review the Holiday Farm Fire burned-area chemistry figure for the first
-  disturbance-paper results paragraph.
-- Decide whether the February 1996 before/after chemistry panel belongs in the
-  main paper or supplement.
-- Find or build the Lookout Fire burned-area and severity table by watershed.
+- Review the Holiday Farm Fire result as the likely first result.
+- Decide whether the February 1996 flood result belongs in the main paper or
+  supplement.
+- Find or build the Lookout Fire watershed table.
+- Decide whether landslide data are complete enough to include.
 
 ## 2026-07-15
 
@@ -69,7 +42,8 @@ pick up next. Keep the current plan in [Roadmap](ROADMAP.md).
 
 - Keep this project focused on chemistry changes through time and disturbance
   response.
-- Keep the storage-water quality paper in the separate storage project.
+- Keep this project focused on chemistry changes through time and disturbance
+  response.
 
 ## 2026-07-14
 

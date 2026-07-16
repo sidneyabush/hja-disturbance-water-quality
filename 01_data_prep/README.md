@@ -14,4 +14,4 @@ HJA_CQ_master.csv
 
 That table is the chemistry input used by `02_disturbance_time_change/2a_build_disturbance_chemistry_panel.R`.
 
-The older hydroseason, rolling C-Q, clustering, synchrony, master-table, and storage-framework prep scripts are archived in `_archive/storage_water_quality_prep/` because they belong to the storage-water-quality workflow, not the current disturbance paper.
+The older hydroseason, rolling C-Q, clustering, synchrony, master-table, and storage-framework prep scripts are archived in `_archive/non_disturbance_prep/` because they are not active disturbance-paper analyses.

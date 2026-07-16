@@ -11,9 +11,7 @@ Use the long HJA chemistry record to ask whether stream chemistry changes over
 time, especially before and after large disturbances like fire, floods, and
 landslides.
 
-This is separate from the storage-water quality paper. The storage paper is about
-long-term storage and chemistry patterns. This work is about chemistry changes
-through time.
+This work is about chemistry changes through time.
 
 ## What To Run
 
@@ -44,14 +42,14 @@ Outputs are written here:
 Generated tables and figures in Box should be recreated by running the scripts,
 not edited by hand.
 
-Archived Step-01 scripts live in `_archive/storage_water_quality_prep/`. Those
+Archived Step-01 scripts live in `_archive/non_disturbance_prep/`. Those
 hydroseason, rolling C-Q, cluster, synchrony, and storage-framework prep steps
 are not active disturbance-paper analyses.
 
 ## What We Have Now
 
 - Yearly chemistry summaries through water year 2024.
-- Chemistry changes compared with the water years used in the storage paper.
+- Chemistry changes compared with the WY1997-2020 baseline.
 - Preliminary Holiday Farm Fire watershed summaries.
 - February 1996 flood dates and streamflow summaries from HF004.
 - A first check of stream chemistry before and after the February 1996 flood.
@@ -67,7 +65,7 @@ are not active disturbance-paper analyses.
 
 ## Local Data Notes
 
-Storage-paper watershed characteristics:
+Watershed characteristics input:
 
 `/Users/sidneybush/Library/CloudStorage/Box-Box/Sidney_Bush/HJA_Water_Quality/data/storage_paper_framework/storage_paper_catchment_char.csv`
 
@@ -134,8 +132,8 @@ Current next steps are tracked in [Roadmap](ROADMAP.md).
 
 ## Notes
 
-- Keep water years 2021-2024 separate from the main storage paper unless storage
-  values are updated beyond water year 2020.
+- Keep water years 2021-2024 labeled as post-2020 disturbance-era chemistry
+  unless updated storage values are explicitly added.
 - Keep clusters, synchrony, hydroseasons, and storage-framework ordinations out
   of this repo's active workflow unless the disturbance paper explicitly needs
   them later.
