@@ -2,7 +2,7 @@
 
 Progress updates: [PROGRESS_UPDATES.md](PROGRESS_UPDATES.md)
 
-## What This Is For
+## Goal
 
 Use the long HJA chemistry record to ask whether stream chemistry changes over
 time, especially before and after disturbances such as fire, floods, and
